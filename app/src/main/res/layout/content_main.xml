@@ -1,0 +1,159 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:weightSum="100"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.koove.imageeditor.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <RelativeLayout
+        android:id="@+id/seekBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="10"
+        android:background="#00000000"
+        android:orientation="horizontal"
+        android:weightSum="100"
+
+        >
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:weightSum="100">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="50">
+
+                <TextView
+                    android:id="@+id/text_view_contrast"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Contrast"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/text_view_brightness"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Brightness"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/text_view_saturation"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Saturation"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="50">
+
+
+                <SeekBar
+                    android:id="@+id/seek_bar_contrast"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:max="100"
+                    android:progress="50" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_brightness"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:max="255"
+                    android:progress="50" />
+
+                <SeekBar
+                    android:id="@+id/seek_bar_saturation"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:max="100"
+                    android:progress="50" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="10"
+        android:background="#00000000"
+        android:orientation="horizontal"
+        android:weightSum="100"
+
+        >
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/noneEffect"
+            android:layout_weight="25"
+            android:text="None"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/autoFix"
+            android:layout_weight="25"
+            android:text="Auto Fix"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/lomo"
+            android:layout_weight="25"
+            android:text="Lomo"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:id="@+id/grain"
+            android:text="Grain"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/glSurfaceViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90">
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/effectsview"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
